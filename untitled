@@ -1,0 +1,33 @@
+User
+id              integer
+name            text
+email           text
+password        string
+image           text
+has_backyard    boolean
+backyard_image  text
+about           text
+pets            boolean
+pet_number      integer
+pet_type        text
+
+
+Animal
+id              integer
+name            text
+species         text
+size            text
+image           text
+hair length     text
+shelter_id      integer
+adoption cost   float
+
+
+Shelter
+id              integer
+name            text
+address         text
+phone           number
+email           text
+pets            (pet_ids?)
+adoption_policy text
