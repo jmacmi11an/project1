@@ -11,7 +11,6 @@ class CreateAnimals < ActiveRecord::Migration[5.2]
       t.text :hair_length
       t.text :about
       t.float :adoption_cost
-      t.integer :user_id
       t.integer :shelter_id
 
       t.timestamps

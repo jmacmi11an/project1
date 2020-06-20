@@ -1,0 +1,21 @@
+<%= form_for @user do |u| %>
+  <%= u.label :name %>
+  <%= u.text_field :name, :required => true, :autofocus => true %>
+
+  <%= u.check_box_tag(:has_backyard) %>
+  <%= u.label_tag(:has_backyard, "Do you have a fenced backyard?") %>
+
+
+
+  <%= u.label :owner %>
+  <%= u.text_field :owner %>
+
+  <%= u.label :capacity %>
+  <%= u.number_field :capacity %>
+
+  <%= u.label :image %>
+  <%= u.url_field :image %>
+
+
+  <%= u.submit %>
+<% end  %>

@@ -34,5 +34,5 @@ s1.animals << a2
 
 
 puts "Animals and Users"
-a2.users << u1
+a2.users << u1 << u2
 a1.users << u2

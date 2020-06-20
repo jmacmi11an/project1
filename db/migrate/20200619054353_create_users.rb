@@ -11,7 +11,6 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.boolean :has_pets
       t.integer :pet_number
       t.text :pet_type
-      t.integer :animal_id
 
       t.timestamps
     end
