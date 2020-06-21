@@ -13,15 +13,20 @@ class UsersController < ApplicationController
     @user = User.new user_params
     if @user.save
       session[:user_id] = @user.id  # I think the line of code goes here
-      # redirect_to root_path
+      redirect_to root_path
     else
       render :new
     end
   end
 
   def edit
-    @user = User.new user_params
+    # @user = User.find params[:id]
+  end
 
+  def update
+    user = User.find session[:user_id]
+    user.update user_params
+    # redirect_to
   end
 
 

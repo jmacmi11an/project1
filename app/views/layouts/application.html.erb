@@ -14,8 +14,12 @@
       <h1>Furever</h1>
       <nav>
         <a href="/">Home</a>
-        <a href="/users/new">Sign Up</a>
-        <a href="/login">Login</a>
+        <% if @current_user.present? %>
+          <%= link_to "Log out #{@current_user.email}", login_path, :method => 'delete' %>
+        <% else %>
+          <a href="/users/new">Sign Up</a>
+          <a href="/login">Login</a>
+        <% end %>
       </nav>
 
 

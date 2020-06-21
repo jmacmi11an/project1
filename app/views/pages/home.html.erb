@@ -1,18 +1,22 @@
-<h2>this is the pages home html.erb</h2>
+<h2>(this is the pages home html.erb)</h2>
+
 <% if @current_user.present? %>
   <marquee>
-    <h2>Welcome Back <%= @current_user.email %></h2>
+    <h2>Welcome <%= @current_user.email %></h2>
   </marquee>
 
   <h1>Your user ID is <%= session[:user_id] %></h1>
 
-
-
+  <p>Your name is <%= session[:name] %> about you <%= session[:about] %></p>
   <h2>
     <% @user = User.find session[:user_id] %>
     Welcome  <%= @user.name %>
   </h2>
-<%end %>
 
-<p>do you want to update the rest of your profile now?</p>
-<a href="/users/edit">Update your profile</a>
+  <p>do you want to update the rest of your profile now?</p>
+  <a href="/users/:id/edit">Update your profile</a>
+
+<%else %>
+  <p>welcome to Furever</p>
+  <a href="/users/new">Enter</a>
+<% end %>

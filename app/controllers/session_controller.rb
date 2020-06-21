@@ -8,10 +8,12 @@ class SessionController < ApplicationController
       session[:user_id] = user.id
       redirect_to root_path
     else
-      flash[:error] = "User could not be created!"
+      flash[:error] = "invalid email or password"
       redirect_to login_path
     end
   end
+
+
 
   def destroy
     session[:user_id] = nil
