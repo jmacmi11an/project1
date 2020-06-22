@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'shelters/index'
+  get 'shelters/new'
+  get 'shelters/edit'
+  get 'shelters/show'
   root :to => 'pages#home'
   resources :users
   resources :shelters

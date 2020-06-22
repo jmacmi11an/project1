@@ -1,0 +1,6 @@
+<h1>Shelters</h1>
+<p>Find me in app/views/shelters/index.html.erb</p>
+
+<% @shelters.each do |shelter| %>
+  <p><%= link_to shelter.name, shelter %></p>
+<% end %>

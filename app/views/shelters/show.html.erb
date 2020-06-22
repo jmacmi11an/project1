@@ -1,0 +1,9 @@
+
+<h2><%= @shelter.name %></h2>
+
+<p><%= @shelter.address %></p>
+<p><%= number_to_phone(@shelter.phone, pattern: /(\d{4})(\d{3})(\d{3})$/)%></p>
+<p><%= @shelter.email %></p>
+<p><%= @shelter.adoption_policy %></p>
+
+<p>You need to figure out a way to show all pets associated to this shelter</p>
