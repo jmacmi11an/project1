@@ -1,20 +1,39 @@
 <h2>(this is the pages home html.erb)</h2>
 
 <% if @current_user.present? %>
-  <marquee>
-    <h2>Welcome <%= @current_user.email %></h2>
-  </marquee>
+  <% if @current_user.name != nil %>
+    <h2>Welcome <%= @current_user.name %></h2>
+  <% else %>
+    <h2>Welcome</h2>
+  <% end %>
+  <% if @current_user.image != nil %>
+    <%= image_tag @current_user.image, :class => 'feature'%>
+  <% end %>
+  <% if @current_user.name != nil %>
+    <p>My name is <%= @current_user.name %></p>
+  <% end %>
+  <% if @current_user.about != nil %>
+    <p>Abotu me: <%= @current_user.about %></p>
+  <% end %>
+  <% if @current_user.has_backyard != nil %>
+    <p>I have a backyard? <%= @current_user.has_backyard %></p>
+  <% end %>
+  <% if @current_user.backyard_image != nil %>
+    <%= image_tag @current_user.backyard_image, :class => 'backyard'%>
+  <% end %>
+  <% if @current_user.has_pets != nil %>
+    <p>I have other pets? <%= @current_user.has_pets %></p>
+  <% end %>
+  <% if @current_user.pet_number != nil %>
+    <p>How many pets do I have? <%= @current_user.pet_number%></p>
+  <% end %>
 
-  <h1>Your user ID is <%= session[:user_id] %></h1>
 
-  <p>Your name is <%= session[:name] %> about you <%= session[:about] %></p>
-  <h2>
-    <% @user = User.find session[:user_id] %>
-    Welcome  <%= @user.name %>
-  </h2>
 
-  <p>do you want to update the rest of your profile now?</p>
-  <a href="/users/:id/edit">Update your profile</a>
+
+
+    <p>do you want to update the rest of your profile now?</p>
+<%= link_to 'update your profile', edit_user_path(@current_user) %>
 
 <%else %>
   <p>welcome to Furever</p>

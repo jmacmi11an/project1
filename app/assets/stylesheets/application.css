@@ -17,3 +17,15 @@
 body {
   background-color: pink;
 }
+
+.feature {
+  height: 25em;
+}
+
+.backyard {
+  height: 12em;
+}
+
+.thumb {
+  height: 10em;
+}

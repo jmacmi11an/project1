@@ -1,0 +1,24 @@
+<h1>All Animals</h1>
+<p>Find me in app/views/animals/index.html.erb</p>
+
+<h2>Cats</h2>
+<% @animals.each do |animal|  %>
+  <% if animal.species == 'cat' %>
+    <% if animal.image != nil %>
+      <%=  link_to image_tag(animal.image, :class => 'thumb'), animal%>
+    <% else %>
+      <%= link_to animal.name, animal %>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h2>Dogs</h2>
+<% @animals.each do |animal|  %>
+  <% if animal.species == 'dog' %>
+    <% if animal.image != nil %>
+      <%=  link_to image_tag(animal.image, :class => 'thumb'), animal%>
+    <% else %>
+      <%= link_to animal.name, animal %>
+    <% end %>
+  <% end %>
+<% end %>

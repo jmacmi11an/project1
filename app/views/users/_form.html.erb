@@ -1,4 +1,4 @@
-<%= form_for @user do |u| %> 
+<%= form_for @user do |u| %>
   <%= u.label :name %>
   <%= u.text_field :name, :required => true, :autofocus => true %>
 
@@ -13,6 +13,15 @@
 
   <%= u.label :upload_backyard_image %>
   <%= u.url_field :backyard_image %>
+
+  <%= u.label :has_pets, "Do you have any other pets?" %>
+  <%= u.check_box :has_pets %>
+
+  <%= u.label :pet_number, "How many?" %>
+  <%= u.number_field(:pet_number, step: 1.0) %>
+
+  <%= u.label :pet_type %>
+  <p>(nothing here for now, I want to find a way later to choose between cat, dog or both)</p>
 
   <%= u.submit %>
 <% end  %>

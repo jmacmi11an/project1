@@ -24,14 +24,14 @@ class UsersController < ApplicationController
   end
 
   def update
-    user = User.find session[:user_id]
-    user.update user_params
-    # redirect_to
+    @user = User.find params[:id]
+    @user.update user_params
+    redirect_to root_path
   end
 
 
   private
   def user_params
-    params.require(:user).permit(:email, :password, :password_confirmation)
+    params.require(:user).permit(:email, :password, :password_confirmation, :name, :image, :has_backyard, :backyard_image, :about, :has_pets, :pet_number, :pet_type)
   end
 end
