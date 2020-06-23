@@ -1,3 +1,21 @@
+Possible Pet Rescue API Token
+" $url="http://www.petrescue.com.au/api/listings?token=f716909f5d644fe3702be5c7895aa34e&amp;group_id=10046&amp;species=".$category;
+
+'Accept: application/json',
+'X-some-API-Key: f716909f5d644fe3702be5c7895aa34e',
+));"
+
+
+possible also related to Pet Rescue API
+"    "nexmo":{
+        "api_key": "3e615fbe",
+        "api_secret": "EJthbT9bKrVYsHM9",
+        "from": "PetRescue"
+    }
+
+
+
+
 User
 id              integer
 name            text

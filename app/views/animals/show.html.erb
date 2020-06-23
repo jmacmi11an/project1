@@ -3,4 +3,4 @@
 <h2><%= @animal.name %></h2>
 
 <p><%= @animal.about %></p>
-<p><%= link_to @animal.shelter.name, shelter_path %></p>
+<p><%= link_to @animal.shelter.name, shelter_path(@animal.shelter.id) %></p>
