@@ -11,9 +11,8 @@
 
   <body>
     <div class="container">
-      <h1>Furever</h1>
+      <h1><%= link_to "Furever", root_path, :class => 'furever'%></h1>
       <nav>
-        <%= link_to "Home", root_path %>
         <%= link_to "Animals", animals_path %>
         <%= link_to "Shelters", shelters_path %>
         <% if @current_user.present? %>

@@ -13,9 +13,24 @@
  *= require_tree .
  *= require_self
  */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+/* font-family: 'Fredoka One', cursive; */
 
 body {
-  background-color: pink;
+  background-color: #f1e7e9;
+  text-decoration: none;
+  /* font-family: 'Fredoka One', cursive; */
+}
+
+h1 {
+}
+
+.furever {
+  text-decoration: none;
+  color: black;
+  font-size: 54px;
+  font-family: 'Fredoka One', cursive;
 }
 
 .feature {

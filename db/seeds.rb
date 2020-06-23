@@ -9,7 +9,7 @@
 
 
 User.destroy_all
-u1 = User.create :name => 'Joel Turnbull', :email => 'jt@ga.co', :password => 'chicken', :image => 'https://fillmurray.com/400/500', :has_backyard => false, :about => "Teacher at GA. Only like cats named Audrey", :has_pets => true, :pet_number => 2, :pet_type => "cats"
+u1 = User.create :name => 'Joel Turnbull', :email => 'jt@ga.co', :password => 'chicken', :image => 'https://www.fillmurray.com/400/500', :has_backyard => false, :about => "Teacher at GA. Only like cats named Audrey", :has_pets => true, :pet_number => 2, :pet_type => "cats"
 u2 = User.create :name => 'Aleks', :email => 'aleks@ga.co', :password => 'chicken'
 puts "#{ User.count }"
 
