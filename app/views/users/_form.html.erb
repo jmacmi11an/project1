@@ -1,9 +1,9 @@
-<%= form_for @user do |u| %>
+<%= form_for(@user, :html => {:multipart => true}) do |u| %>
   <%= u.label :name %>
   <%= u.text_field :name, :required => true, :autofocus => true %>
 
-  <%= u.label :image %>
-  <%= u.url_field :image %>
+  <%= u.label "Profile Photo" %>
+  <%= u.cl_image_upload :image %>
 
   <%= u.label :about %>
   <%= u.text_field :about %>

@@ -5,7 +5,7 @@
     <h2>Welcome</h2>
   <% end %>
   <% if @current_user.image != nil %>
-    <%= image_tag @current_user.image, :class => 'feature'%>
+    <%= cl_image_tag @current_user.image, :class => 'feature'%>
   <% end %>
   <% if @current_user.name != nil %>
     <p>My name is <%= @current_user.name %></p>
