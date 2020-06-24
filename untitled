@@ -1,3 +1,14 @@
+This is to give only certain people updating priviledges
+def update
+  redirect_to root_path unless @current_user.mixtape_ids.includes? params[:id]
+  mixtape = Mixtape.find params[:id]
+  mixtape.update mixtape_params
+  redirect_to mixtape
+end
+
+
+
+
 Possible Pet Rescue API Token
 " $url="http://www.petrescue.com.au/api/listings?token=f716909f5d644fe3702be5c7895aa34e&amp;group_id=10046&amp;species=".$category;
 

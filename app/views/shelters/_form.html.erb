@@ -1,0 +1,24 @@
+
+<div class="form-group">
+    <%= form_for(@shelter, :html => {:multipart => true}) do |s| %>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <%= s.label :name %>
+        <%= s.text_field :name, :required => true, :autofocus => true, :class => 'form-control' %>
+
+        <%= s.label :address %>
+        <%= s.text_field :address, :class => 'form-control'%>
+
+        <%= s.label :phone %>
+        <%= s.text_field :phone, :class => 'form-control', :placeholder => '0411 305 208'%>
+
+        <%= s.label :email %>
+        <%= s.text_field :email, :class => 'form-control' %>
+
+        <%= s.label :adoption_policy %>
+        <%= s.text_area :adoption_policy, :rows => 3, :class => 'form-control' %>
+      </div>
+    </div>
+  </div>
+    <%= s.submit :class => 'btn btn-primary my-3' %>
+  <% end  %>

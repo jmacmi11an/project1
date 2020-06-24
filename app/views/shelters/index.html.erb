@@ -1,6 +1,16 @@
 <div class="row justify-content-center">
   <h1>Shelters</h1>
 </div>
-<% @shelters.each do |shelter| %>
-  <p><%= link_to shelter.name, shelter %></p>
-<% end %>
+
+<div class="col-md-6">
+  <% @shelters.each do |shelter| %>
+    <p><%= link_to shelter.name, shelter %></p>
+  <% end %>
+</div>
+
+
+
+<div class="row justify-content-center my-3">
+  <p>Don't see your shelter?
+  <%= link_to "Add it!", new_shelter_path %></p>
+</div>

@@ -8,11 +8,7 @@
     <h2>Cats</h2>
     <% @animals.each do |animal|  %>
       <% if animal.species == 'cat' %>
-        <% if animal.image != nil %>
-          <%=  link_to image_tag(animal.image, :class => 'thumb'), animal%>
-        <% else %>
-          <%= link_to animal.name, animal %>
-        <% end %>
+        <%= link_to cl_image_tag(animal.images.first, :class => 'thumb'), animal%>
       <% end %>
     <% end %>
   </div>
@@ -21,11 +17,7 @@
     <h2>Dogs</h2>
     <% @animals.each do |animal|  %>
       <% if animal.species == 'dog' %>
-        <% if animal.image != nil %>
-          <%=  link_to image_tag(animal.image, :class => 'thumb'), animal%>
-        <% else %>
-          <%= link_to animal.name, animal %>
-        <% end %>
+        <%= link_to cl_image_tag(animal.images.first, :class => 'thumb'), animal%>
       <% end %>
     <% end %>
   </div>

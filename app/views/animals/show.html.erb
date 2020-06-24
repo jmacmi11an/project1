@@ -4,7 +4,10 @@
 
 <div class="row">
   <div class="col-md-5">
-    <%= image_tag(@animal.image, :class => 'feature') %>
+    <%= cl_image_tag(@animal.images[0], :class => 'feature') %>
+    <% @animal.images.each do |image| %>
+      <%= cl_image_tag(image, :class => 'thumb') %>
+    <% end %>
   </div>
 
   <div class="col-md-5 offset-1">
@@ -24,4 +27,11 @@
 
     <p>Add this Animal -> I need to create a link, find the route, go to controllers to add </p>
   </div>
+</div>
+
+
+<div class="row justify-content-center my-3">
+  <p class="my-3">Animal listing incorrect?
+    <%= link_to "Fix it!", edit_animal_path %>
+  </p>
 </div>
