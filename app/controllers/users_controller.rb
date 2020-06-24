@@ -15,7 +15,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to user_path(@user.id)
     else
-      render :new
+      render :new       #is this my problem?
     end
   end
 
@@ -39,21 +39,13 @@ class UsersController < ApplicationController
         @user.backyard_images << res["public_id"]
       end
     end
-    @user.update user_params      #.update v .save?
-    redirect_to root_path
+    @user.update user_params
+    redirect_to user_path(@user.id)
   end
 
 
   private
-  def user_params                                       #this function used to include :image
+  def user_params
     params.require(:user).permit(:email, :password, :password_confirmation, :name, :has_backyard, :backyard_image, :about, :has_pets, :pet_number, :pet_type)
   end
 end
-
-# @user = User.find params[:id]
-# if params[:user][:backyard_images].present?
-#   params[:user][:backyard_images].each do |image|
-#     res = Cloudinary::Uploader.upload(params[image])
-#     @user.image = res["public_id"]
-#   end
-# end
