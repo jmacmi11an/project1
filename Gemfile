@@ -29,6 +29,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'cloudinary'
 gem 'jquery-rails'
+gem 'bootstrap'
 # using cloudinary
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

@@ -1,27 +1,33 @@
 <%= form_for(@user, :html => {:multipart => true}) do |u| %>
-  <%= u.label :name %>
-  <%= u.text_field :name, :required => true, :autofocus => true %>
+  <div class="form-group">
+    <%= u.label :name %>
+    <%= u.text_field :name, :required => true, :autofocus => true, :class => 'form-control' %>
 
-  <%= u.label "Profile Photo" %>
-  <%= u.cl_image_upload :image %>
+    <%= u.label :about %>
+    <%= u.text_area :about, :class => 'form-control' %>
 
-  <%= u.label :about %>
-  <%= u.text_field :about %>
+    <div class="form-check mb-2">
+      <%= u.check_box :has_backyard, :class => 'form-check-input' %>
+      <%= u.label :has_backyard, "Do you have a fenced backyard?", :class => 'form-check-label'  %>
+    </div>
 
-  <%= u.check_box :has_backyard %>
-  <%= u.label :has_backyard, "Do you have a fenced backyard?" %>
+    <%= u.label :upload_backyard_image %>
+    <%= u.url_field :backyard_image, :class => 'form-control' %>
+<!-- At some point you'll want to change this image section to make it consistent with the profile picture section. Also, you'll want to ad the ability to do multiple photos-->
+    <div class="form-check mb-2">
+      <%= u.check_box :has_pets, :class => 'form-check-input' %>
+      <%= u.label :has_pets, "Do you have any other pets?", :class => 'form-check-label' %>
+    </div>
 
-  <%= u.label :upload_backyard_image %>
-  <%= u.url_field :backyard_image %>
+    <%= u.label :pet_number, "How many?" %>
+    <%= u.number_field(:pet_number, step: 1.0)%>
 
-  <%= u.label :has_pets, "Do you have any other pets?" %>
-  <%= u.check_box :has_pets %>
+    <%= u.label :pet_type %>
+    <p>(nothing here for now, I want to find a way later to choose between cat, dog or both)</p>
 
-  <%= u.label :pet_number, "How many?" %>
-  <%= u.number_field(:pet_number, step: 1.0) %>
+    <%= u.label "Profile Photo: (users who include a photo are prioritised when submitting to adopt)" %>
+    <%= u.cl_image_upload :image, :class => 'form-control' %>
 
-  <%= u.label :pet_type %>
-  <p>(nothing here for now, I want to find a way later to choose between cat, dog or both)</p>
-
-  <%= u.submit %>
+  </div>
+  <%= u.submit :class => 'btn btn-primary' %>
 <% end  %>

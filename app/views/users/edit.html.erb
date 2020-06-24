@@ -1,11 +1,10 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<h2>Update your profile
+  <% @user = User.find session[:user_id] %>
+  <% if @user.name != nil %>
+    <%= @user.name %>
+  <% end %>
+</h2>
 
-does this work?
-
-  <p>
-    <% @user = User.find session[:user_id] %>  AND/OR <%= @user.email %> --- <%= @user.id %>
-  </p>
 
 
 <%= render :partial => 'form' %>

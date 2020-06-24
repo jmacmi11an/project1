@@ -1,9 +1,12 @@
 <%= image_tag(@animal.image, :class => 'feature') %>
 
 <h2><%= @animal.name %></h2>
-<h2>Add this beautiful <%= @animal.species %></h2>
+<h4>A beautiful
+  <%= @animal.breed %>
+  looking for love!
+</h4>
 
 <p><%= @animal.about %></p>
-<p><%= link_to @animal.shelter.name, shelter_path(@animal.shelter.id) %></p>
+<p>Adoption provided through - <%= link_to @animal.shelter.name, shelter_path(@animal.shelter.id) %></p>
 
 <p>Add this Animal -> I need to create a link, find the route, go to controllers to add </p>
