@@ -1,46 +1,69 @@
 <% if @current_user.present? %>
-  <% if @current_user.name != nil %>
-    <h2>Welcome <%= @current_user.name %></h2>
-  <% else %>
-    <h2>Welcome</h2>
-  <% end %>
-  <% if @current_user.image != nil %>
-    <%= cl_image_tag @current_user.image, :class => 'feature'%>
-  <% end %>
-  <% if @current_user.name != nil %>
-    <p>My name is <%= @current_user.name %></p>
-  <% end %>
-  <% if @current_user.about != nil %>
-    <p>Abotu me: <%= @current_user.about %></p>
-  <% end %>
-  <% if @current_user.has_backyard != nil %>
-    <p>I have a backyard? <%= @current_user.has_backyard %></p>
-  <% end %>
-  <% if @current_user.backyard_image != nil %>
-    <%= image_tag @current_user.backyard_image, :class => 'backyard'%>
-  <% end %>
-  <% if @current_user.has_pets != nil %>
-    <p>I have other pets? <%= @current_user.has_pets %></p>
-  <% end %>
-  <% if @current_user.pet_number != nil %>
-    <p>How many pets do I have? <%= @current_user.pet_number%></p>
-  <% end %>
-  <% if @current_user.animals.size > 0 %>
-    <p>Furever friends I love</p>
-      <% @current_user.animals.each do |animal| %>
-        <%= link_to image_tag(animal.image, :class => 'thumb'), animal %>
+
+  <div class="row justify-content-center my-3">
+    <% if @current_user.name != nil %>
+      <h1>Welcome, <%= @current_user.name %></h1>
+    <% else %>
+      <h2>Welcome</h2>
+    <% end %>
+  </div>
+  <div class="row">
+    <div class="col-md-5 offset-md-1">
+      <% if @current_user.image != nil %>
+        <%= cl_image_tag @current_user.image, :class => 'feature'%>
       <% end %>
-  <% end %>
+      <% if @current_user.has_backyard != nil %>
+        <h5>I have a backyard?</h5>
+          <% if @current_user.has_backyard == false %>
+            <p>Unfortunately not, only cats or low energy dogs for me.</p>
+          <% else %>
+            <p>Sure do! I can care for any kind of pet!</p>
+        <% end %>
+      <% end %>
+      <% if @current_user.backyard_image != nil %>
+        <%= image_tag @current_user.backyard_image, :class => 'backyard'%>
+      <% end %>
+      <% if @current_user.has_pets != nil %>
+        <h5>I have other pets?</h5>
+          <% if @current_user.has_pets %>
+            <p>Absolutely! Can't live without them!</p>
+          <% else %>
+            <p>Not yet, I'm waiting to find one that's just right!</p>
+        <% end %>
+      <% end %>
+      <% if @current_user.pet_number != nil %>
+        <h5>How many pets do I have?</h5> <p><%= @current_user.pet_number%></p>
+      <% end %>
+    </div>
+
+    <div class="col-md-5 offset-md-1">
+      <% if @current_user.about != nil %>
+        <h3>About me:</h3> <p><%= @current_user.about %></p>
+      <% end %>
+      <% if @current_user.animals.size > 0 %>
+        <h5>Furever friends I love:</h5>
+          <% @current_user.animals.each do |animal| %>
+            <%= link_to image_tag(animal.image, :class => 'thumb'), animal %>
+            <p><%= animal.name %></p>
+          <% end %>
+      <% end %>
+    </div>
+  </div>
 
 
 
-
-    <p>do you want to update the rest of your profile now?</p>
-<%= link_to 'update your profile', edit_user_path(@current_user) %>
+<div class="row justify-content-center my-3">
+    <p>Do you want to update the rest of your profile now?
+      <%= link_to 'Yes!', edit_user_path(@current_user) %>
+    </p>
+</div>
 
 <%else %>
 
-  <h1>Welcome to <span class="fur">Furever</span></h1>
+  <div class="row justify-content-center my-3">
+    <h1>Welcome to <span class="fur">Furever</span></h1>
+  </div>
+
   <p> Furever is a national animal welfare charity like no other. We help save thousands of lives every month by looking at the big picture, disrupting the status quo and finding innovative tech solutions to the biggest challenges facing rescue pets in Australia.</p>
 
   <p><%= link_to "Sign up", new_user_path %> and meet your furever friend today.</p>

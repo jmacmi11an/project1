@@ -1,12 +1,20 @@
-<%= image_tag(@animal.image, :class => 'feature') %>
+<div class="row justify-content-center my-3">
+  <h1><%= @animal.name %></h1>
+</div>
 
-<h2><%= @animal.name %></h2>
-<h4>A beautiful
-  <%= @animal.breed %>
-  looking for love!
-</h4>
+<div class="row">
+  <div class="col-md-5">
+    <%= image_tag(@animal.image, :class => 'feature') %>
+  </div>
 
-<p><%= @animal.about %></p>
-<p>Adoption provided through - <%= link_to @animal.shelter.name, shelter_path(@animal.shelter.id) %></p>
+  <div class="col-md-5 offset-1">
+    <h4 class="my-2">A beautiful
+      <%= @animal.breed %>
+      looking for love!
+    </h4>
+    <p><%= @animal.about %></p>
+    <p>Adoption provided through - <%= link_to @animal.shelter.name, shelter_path(@animal.shelter.id) %></p>
 
-<p>Add this Animal -> I need to create a link, find the route, go to controllers to add </p>
+    <p>Add this Animal -> I need to create a link, find the route, go to controllers to add </p>
+  </div>
+</div>

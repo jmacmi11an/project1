@@ -26,11 +26,13 @@ body {
 h1 {
 }
 
+
 .furever {
   text-decoration: none;
-  color: black;
+  color: #d29f68;
   font-size: 54px;
   font-family: 'Fredoka One', cursive;
+
 }
 
 .fur {
