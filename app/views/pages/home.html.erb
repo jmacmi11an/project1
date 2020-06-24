@@ -40,6 +40,9 @@
 
 <%else %>
 
-  <h2>Welcome to <%= link_to "Furever", new_user_path, :class => 'furever' %></h2>
+  <h1>Welcome to <span class="fur">Furever</span></h1>
+  <p> Furever is a national animal welfare charity like no other. We help save thousands of lives every month by looking at the big picture, disrupting the status quo and finding innovative tech solutions to the biggest challenges facing rescue pets in Australia.</p>
+
+  <p><%= link_to "Sign up", new_user_path %> and meet your furever friend today.</p>
 
 <% end %>

@@ -16,20 +16,35 @@
     <div class="container">
 
       <h1><%= link_to "Furever", root_path, :class => 'furever'%></h1>
+
+
+
       <nav>
-        <%= link_to "Animals", animals_path %>
-        <%= link_to "Shelters", shelters_path %>
-        <% if @current_user.present? %>
-          <%= link_to "Log out #{@current_user.email}", login_path, :method => 'delete' %>
-        <% else %>
-          <%= link_to "Sign up", new_user_path%>
-          <%= link_to "Login", login_path%>
-        <% end %>
+        <ul class="nav">
+          <li class="nav-item">
+            <%= link_to "Animals", animals_path, :class => "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Shelters", shelters_path, :class => "nav-link" %>
+          </li>
+          <% if @current_user.present? %>
+          <li class="nav-item">
+            <%= link_to "Log out #{@current_user.email}", login_path, :method => 'delete', :class => "nav-link" %>
+          </li>
+          <% else %>
+          <li class="nav-item">
+            <%= link_to "Sign up", new_user_path, :class => "nav-link"%>
+          </li>
+            <li class="nav-item">
+              <%= link_to "Login", login_path, :class => "nav-link"%>
+          </li>
+          <% end %>
+        </ul>
       </nav>
 
       <%= yield %>
 
-      
+
     </div>
   </body>
 </html>
