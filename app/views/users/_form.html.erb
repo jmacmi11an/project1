@@ -1,5 +1,5 @@
-<%= form_for(@user, :html => {:multipart => true}) do |u| %>
-  <div class="form-group">
+<div class="form-group">
+  <%= form_for(@user, :html => {:multipart => true}) do |u| %>
     <%= u.label :name %>
     <%= u.text_field :name, :required => true, :autofocus => true, :class => 'form-control' %>
 
@@ -11,9 +11,9 @@
       <%= u.label :has_backyard, "Do you have a fenced backyard?", :class => 'form-check-label'  %>
     </div>
 
-    <%= u.label :upload_backyard_image %>
-    <%= u.url_field :backyard_image, :class => 'form-control' %>
-<!-- At some point you'll want to change this image section to make it consistent with the profile picture section. Also, you'll want to ad the ability to do multiple photos-->
+    <%= u.label :upload_backyard_images %>
+    <%= u.file_field :backyard_images, :multiple => true, :class => 'form-control' %>
+
     <div class="form-check mb-2">
       <%= u.check_box :has_pets, :class => 'form-check-input' %>
       <%= u.label :has_pets, "Do you have any other pets?", :class => 'form-check-label' %>

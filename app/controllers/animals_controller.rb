@@ -4,6 +4,7 @@ class AnimalsController < ApplicationController
   end
 
   def new
+    @animal = Animal.new
   end
 
   def edit

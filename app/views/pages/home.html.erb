@@ -13,18 +13,20 @@
         <%= cl_image_tag @current_user.image, :class => 'feature'%>
       <% end %>
       <% if @current_user.has_backyard != nil %>
-        <h5>I have a backyard?</h5>
-          <% if @current_user.has_backyard == false %>
+        <h5 class="my-1">I have a backyard?</h5>
+          <% if @current_user.has_backyard == false && @current_user.backyard_images.size < 1%>
             <p>Unfortunately not, only cats or low energy dogs for me.</p>
           <% else %>
             <p>Sure do! I can care for any kind of pet!</p>
         <% end %>
       <% end %>
-      <% if @current_user.backyard_image != nil %>
-        <%= image_tag @current_user.backyard_image, :class => 'backyard'%>
+      <% if @current_user.backyard_images.size > 0 %>
+        <% @current_user.backyard_images.each do |image| %>
+          <%= cl_image_tag image, :class => 'backyard'%>
+        <% end %>
       <% end %>
       <% if @current_user.has_pets != nil %>
-        <h5>I have other pets?</h5>
+        <h5 class="my-1">I have other pets?</h5>
           <% if @current_user.has_pets %>
             <p>Absolutely! Can't live without them!</p>
           <% else %>

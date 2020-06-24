@@ -20,16 +20,22 @@ class UsersController < ApplicationController
   end
 
   def edit
-    # @user = User.find params[:id]
+    @user = User.find params[:id]
   end
 
-  def update                                                  #user used to be @user
-    user = User.find params[:id]
-    if params[:file].present?                                 #this line is new
-      res = Cloudinary::Uploader.upload(params[:file])        #this line is new
-      user.image = res["public_id"]                           #this line is new
-    end                                                       #this line is new
-    user.save user_params                                   #update_attributes?
+  def update
+    @user = User.find params[:id]
+    if params[:file].present?
+      res = Cloudinary::Uploader.upload(params[:file])
+      @user.image = res["public_id"]
+    end
+    if params[:user][:backyard_images].present?
+      params[:user][:backyard_images].each do |image|
+        res = Cloudinary::Uploader.upload(image)
+        @user.backyard_images << res["public_id"]
+      end
+    end
+    @user.update user_params      #.update v .save?
     redirect_to root_path
   end
 
@@ -39,3 +45,11 @@ class UsersController < ApplicationController
     params.require(:user).permit(:email, :password, :password_confirmation, :name, :has_backyard, :backyard_image, :about, :has_pets, :pet_number, :pet_type)
   end
 end
+
+# @user = User.find params[:id]
+# if params[:user][:backyard_images].present?
+#   params[:user][:backyard_images].each do |image|
+#     res = Cloudinary::Uploader.upload(params[image])
+#     @user.image = res["public_id"]
+#   end
+# end
