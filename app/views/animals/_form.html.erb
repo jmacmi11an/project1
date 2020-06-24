@@ -1,0 +1,41 @@
+
+<div class="form-group">
+    <%= form_for(@animal, :html => {:multipart => true}) do |a| %>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <%= a.label :name %>
+        <%= a.text_field :name, :required => true, :autofocus => true, :class => 'form-control' %>
+
+        <%= a.label :about %>
+        <%= a.text_area :about, :class => 'form-control', :rows => 5 %>
+
+        <%= a.label :species %>
+        <%= a.text_field :species, :required => true, :class => 'form-control' %>
+
+        <%= a.label :breed %>
+        <%= a.text_field :breed, :class => 'form-control' %>
+
+        <%= a.label :size %>
+        <%= a.text_field :size, :required => true, :class => 'form-control' %>
+      </div>
+
+      <div class="form-group col-md-6">
+        <%= a.label :gender %>
+        <%= a.text_field :gender, :required => true, :class => 'form-control' %>
+
+        <%= a.label :age %>
+        <%= a.text_field :age, :required => true, :class => 'form-control' %>
+
+        <%= a.label :hair_length %>
+        <%= a.text_field :hair_length, :class => 'form-control' %>
+
+        <%= a.label :adoption_cost %>
+        <%= a.number_field :adoption_cost, step: :any, :class => 'form-control' %>
+
+        <%= a.label :shelter_id %>
+        <%= a.select :shelter_id, Shelter.pluck(:name, :id), :include_blank => true, :class => 'form-control' %>
+      </div>
+    </div>
+  </div>
+    <%= a.submit :class => 'btn btn-primary' %>
+  <% end  %>

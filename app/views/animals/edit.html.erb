@@ -1,2 +1,7 @@
-<h1>Animals#edit</h1>
-<p>Find me in app/views/animals/edit.html.erb</p>
+<h1>Edit an animal listing </h1>
+
+<%= render :partial => 'form' %>
+
+<p class="my-3">Shelter not listed?
+  <%= link_to "Add it here!", new_shelter_path %>
+</p>

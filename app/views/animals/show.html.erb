@@ -9,9 +9,16 @@
 
   <div class="col-md-5 offset-1">
     <h4 class="my-2">A beautiful
+      <%= @animal.size %>
+      <%= @animal.gender %>
       <%= @animal.breed %>
       looking for love!
     </h4>
+    <h5>Age: <%= @animal.age %></h5>
+    <h5>Hair length: <%= @animal.hair_length %></h5>
+    <h5>Adoption cost: <%= number_to_currency(@animal.adoption_cost) %></h5>
+
+
     <p><%= @animal.about %></p>
     <p>Adoption provided through - <%= link_to @animal.shelter.name, shelter_path(@animal.shelter.id) %></p>
 

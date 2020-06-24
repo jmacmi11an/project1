@@ -13,7 +13,7 @@
         <%= cl_image_tag @current_user.image, :class => 'feature'%>
       <% end %>
       <% if @current_user.has_backyard != nil %>
-        <h5 class="my-1">I have a backyard?</h5>
+        <h4 class="my-1">I have a backyard?</h4>
           <% if @current_user.has_backyard == false && @current_user.backyard_images.size < 1%>
             <p>Unfortunately not, only cats or low energy dogs for me.</p>
           <% else %>
@@ -26,7 +26,7 @@
         <% end %>
       <% end %>
       <% if @current_user.has_pets != nil %>
-        <h5 class="my-1">I have other pets?</h5>
+        <h4 class="my-1">I have other pets?</h4>
           <% if @current_user.has_pets %>
             <p>Absolutely! Can't live without them!</p>
           <% else %>
@@ -34,7 +34,8 @@
         <% end %>
       <% end %>
       <% if @current_user.pet_number != nil %>
-        <h5>How many pets do I have?</h5> <p><%= @current_user.pet_number%></p>
+        <h4>How many pets do I have?</h4>
+        <p><%= @current_user.pet_number%></p>
       <% end %>
     </div>
 
@@ -43,7 +44,7 @@
         <h3>About me:</h3> <p><%= @current_user.about %></p>
       <% end %>
       <% if @current_user.animals.size > 0 %>
-        <h5>Furever friends I love:</h5>
+        <h4>Furever friends I love:</h4>
           <% @current_user.animals.each do |animal| %>
             <%= link_to image_tag(animal.image, :class => 'thumb'), animal %>
             <p><%= animal.name %></p>
