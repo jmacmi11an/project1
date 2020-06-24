@@ -23,7 +23,7 @@
         <ul class="nav justify-content-end">
           <li class="nav-item">
             <% if @current_user.present? %>
-              <%= link_to "My Home", root_path, :class => "nav-link" %>
+              <%= link_to "My Home", user_path(@current_user.id), :class => "nav-link" %>
             <% else %>
               <%= link_to "Home", root_path, :class => "nav-link" %>
             <% end %>
