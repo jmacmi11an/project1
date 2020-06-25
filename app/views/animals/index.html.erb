@@ -5,33 +5,19 @@
 <div class="row">
 
   <div class="col-md-6">
-    <h2>Cats</h2>
+    <h2 class="animal-index">Cats</h2>
     <% @animals.each do |animal|  %>
       <% if animal.species == 'cat' %>
         <%= link_to cl_image_tag(animal.images.first, :class => 'thumb my-3'), animal%>
-        <% if @current_user.present? %>
-           <% if @current_user.animals.ids.include?(animal.id) == true %>
-              <%= button_to 'Unsave', animal_id_path(animal), :method => :delete, :class => 'justify-content-center'%>
-          <% else %>
-            <%= button_to 'Save', animal_id_path(animal) %>
-          <% end %>
-        <% end %>
       <% end %>
     <% end %>
   </div>
 
   <div class="col-md-6">
-    <h2>Dogs</h2>
+    <h2 class="animal-index">Dogs</h2>
     <% @animals.each do |animal|  %>
       <% if animal.species == 'dog' %>
         <%= link_to cl_image_tag(animal.images.first, :class => 'thumb my-3'), animal%>
-        <% if @current_user.present? %>
-           <% if @current_user.animals.ids.include?(animal.id) == true %>
-              <%= button_to 'Unsave', animal_id_path(animal), :method => :delete, :class => 'justify-content-center'%>
-          <% else %>
-            <%= button_to 'Save', animal_id_path(animal) %>
-          <% end %>
-        <% end %>
       <% end %>
     <% end %>
   </div>

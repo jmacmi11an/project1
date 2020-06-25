@@ -6,27 +6,50 @@
     <%= u.label :about %>
     <%= u.text_area :about, :class => 'form-control' %>
 
-    <div class="form-check mb-2">
-      <%= u.check_box :has_backyard, :class => 'form-check-input' %>
-      <%= u.label :has_backyard, "Do you have a fenced backyard?", :class => 'form-check-label'  %>
-    </div>
+    <fieldset class="form-group">
+      <div class="row mt-3">
+        <legend class="col-form-label col-sm-2 pt-0">Do you have a fenced backyard?</legend>
+        <div class="col-sm-10">
+          <div class="form-check form-check-inline my-3">
+            <%= u.label :has_backyard, "Yes", :value => "true", :class => "form-check-label" %>
+            <%= u.radio_button :has_backyard, true, :class => "form-check-input" %>
+            <%= u.label :has_backyard, "No", :value => "false", :class => "form-check-label" %>
+            <%= u.radio_button :has_backyard, false, :class => "form-check-input" %>
+          </div>
+        </div>
+      </div>
+    </fieldset>
 
-    <%= u.label :upload_backyard_images %>
-    <%= u.file_field :backyard_images, :multiple => true, :class => 'form-control' %>
+    <%= u.label :upload_backyard_images, "Upload backyard images: (up to 4)" %>
+    <%= u.file_field :backyard_images, :multiple => true, :class => 'form-control-file' %>
 
-    <div class="form-check mb-2">
-      <%= u.check_box :has_pets, :class => 'form-check-input' %>
-      <%= u.label :has_pets, "Do you have any other pets?", :class => 'form-check-label' %>
-    </div>
+
+    <fieldset class="form-group">
+      <div class="row mt-3">
+        <legend class="col-form-label col-sm-2 pt-0">Do you have other pets?</legend>
+        <div class="col-sm-10">
+          <div class="form-check form-check-inline my-3">
+            <%= u.label :has_pets, "Yes", :value => "true", :class => "form-check-label" %>
+            <%= u.radio_button :has_pets, true, :class => "form-check-input" %>
+            <%= u.label :has_pets, "No", :value => "false", :class => "form-check-label" %>
+            <%= u.radio_button :has_pets, false, :class => "form-check-input" %>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+
 
     <%= u.label :pet_number, "How many?" %>
     <%= u.number_field(:pet_number, step: 1.0)%>
 
-    <%= u.label :pet_type %>
-    <p>(nothing here for now, I want to find a way later to choose between cat, dog or both)</p>
 
-    <%= u.label "Profile Photo: (users who include a photo are prioritised when submitting to adopt)" %>
-    <%= u.cl_image_upload :image, :class => 'form-control' %>
+    <div class="form-group mt-3">
+      <%= u.label :pet_type, "Pet type:" %>
+      <%= u.text_field :pet_type, :class => 'form-control-file', :placeholder => "2 dogs, and one cat" %>
+    </div>
+
+    <%= u.label :image, "Upload profile picture:" %>
+    <%= u.cl_image_upload :image, :class => 'form-control-file' %>
 
   </div>
   <%= u.submit :class => 'btn btn-primary' %>

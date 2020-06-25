@@ -14,41 +14,39 @@
 
   <body>
     <div class="container">
+      <div class="header">
+        <h1><%= link_to "Furever", root_path, :class => 'furever'%></h1>
 
-      <h1><%= link_to "Furever", root_path, :class => 'furever'%></h1>
-
-
-
-      <nav>
-        <ul class="nav justify-content-end">
-          <li class="nav-item">
-            <% if @current_user.present? %>
-              <%= link_to "My Home", user_path(@current_user.id), :class => "nav-link" %>
-            <% else %>
-              <%= link_to "Home", root_path, :class => "nav-link" %>
-            <% end %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Animals", animals_path, :class => "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Shelters", shelters_path, :class => "nav-link" %>
-          </li>
-          <% if @current_user.present? %>
-          <li class="nav-item">
-            <%= link_to "Log out #{@current_user.email}", login_path, :method => 'delete', :class => "nav-link" %>
-          </li>
-          <% else %>
-          <li class="nav-item">
-            <%= link_to "Sign up", new_user_path, :class => "nav-link"%>
-          </li>
+        <nav>
+          <ul class="nav justify-content-end">
             <li class="nav-item">
-              <%= link_to "Login", login_path, :class => "nav-link"%>
-          </li>
-          <% end %>
-        </ul>
-      </nav>
-
+              <% if @current_user.present? %>
+                <%= link_to "My Home", user_path(@current_user.id), :class => "nav-link" %>
+              <% else %>
+                <%= link_to "Home", root_path, :class => "nav-link" %>
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Animals", animals_path, :class => "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Shelters", shelters_path, :class => "nav-link" %>
+            </li>
+            <% if @current_user.present? %>
+            <li class="nav-item">
+              <%= link_to "Log out #{@current_user.email}", login_path, :method => 'delete', :class => "nav-link" %>
+            </li>
+            <% else %>
+            <li class="nav-item">
+              <%= link_to "Sign up", new_user_path, :class => "nav-link"%>
+            </li>
+              <li class="nav-item">
+                <%= link_to "Login", login_path, :class => "nav-link"%>
+            </li>
+            <% end %>
+          </ul>
+        </nav>
+      </div>
       <%= yield %>
 
 

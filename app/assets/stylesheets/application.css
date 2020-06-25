@@ -40,7 +40,7 @@ h1 {
 }
 
 .feature {
-  width: 25em;
+  /* max-width: 21em; */
 }
 
 .backyard {
@@ -48,9 +48,26 @@ h1 {
 }
 
 .thumb {
-  height: 10em;
+  height: 9em;
 }
 
 .carousel-pic {
   height: 20em;
+}
+
+.title-left {
+  background-color: #d29f68;
+  border-radius: 2px;
+  padding: 3px;
+}
+
+.title-right {
+  background-color: #875c2e;
+  border-radius: 2px;
+  padding: 3px;
+  color: white;
+}
+
+.animal-index {
+  text-align: center;
 }

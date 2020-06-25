@@ -8,11 +8,12 @@
 <p><%= @shelter.email %></p>
 <p><%= @shelter.adoption_policy %></p>
 
-<% @shelter.animals.each do |animal| %>
-  <p><%= link_to cl_image_tag(animal.images.first, :class => 'thumb'), animal %></p>
-<% end %>
-
-
+<h3>Our current residents:</h3>
+<div class="row">
+  <% @shelter.animals.each do |animal| %>
+    <p><%= link_to cl_image_tag(animal.images.first, :class => 'thumb float-left'), animal %></p>
+  <% end %>
+</div>
 
 <div class="row justify-content-center my-3">
   <p>See a mistake and want to fix it?

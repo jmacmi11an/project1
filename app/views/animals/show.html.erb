@@ -4,7 +4,7 @@
 
 <div class="row">
   <div class="col-md-5">
-    <%= cl_image_tag(@animal.images[0], :class => 'feature my-3') %>
+    <%= cl_image_tag(@animal.images[0], :class => 'feature my-3 img-fluid') %>
     <% @animal.images.each do |image| %>
       <%= cl_image_tag(image, :class => 'thumb') %>
     <% end %>
@@ -23,13 +23,15 @@
 
 
     <p><%= @animal.about %></p>
-    <p>Adoption provided through - <%= link_to @animal.shelter.name, shelter_path(@animal.shelter.id) %></p>
+    <% if @animal.shelter_id != nil %>
+      <p>Adoption provided through - <%= link_to @animal.shelter.name, shelter_path(@animal.shelter.id) %></p>
+    <% end %>
 
     <% if @current_user.present? %>
        <% if @current_user.animals.ids.include?(@animal.id) == true %>
-          <%= button_to 'Remove this animal', animal_id_path(@animal), :method => :delete %>
+          <%= button_to 'Unsave', animal_id_path(@animal), :method => :delete, :class => 'btn btn-secondary' %>
       <% else %>
-        <%= button_to 'Add this animal', animal_id_path(@animal) %>
+        <%= button_to 'Save', animal_id_path(@animal), :class => 'btn btn-primary'%>
       <% end %>
     <% end %>
   </div>
