@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   delete '/login' => 'session#destroy'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-
+  get '/favorites' => 'favorites#index'
+  post '/favorites/:animal_id' => 'favorites#add_animal', :as => "animal_id"
+  delete '/favorites/:animal_id' => 'favorites#remove_animal'
 
 end

@@ -4,7 +4,7 @@
 
 <div class="row">
   <div class="col-md-5">
-    <%= cl_image_tag(@animal.images[0], :class => 'feature') %>
+    <%= cl_image_tag(@animal.images[0], :class => 'feature my-3') %>
     <% @animal.images.each do |image| %>
       <%= cl_image_tag(image, :class => 'thumb') %>
     <% end %>
@@ -25,7 +25,13 @@
     <p><%= @animal.about %></p>
     <p>Adoption provided through - <%= link_to @animal.shelter.name, shelter_path(@animal.shelter.id) %></p>
 
-    <p>Add this Animal -> I need to create a link, find the route, go to controllers to add </p>
+    <% if @current_user.present? %>
+       <% if @current_user.animals.ids.include?(@animal.id) == true %>
+          <%= button_to 'Remove this animal', animal_id_path(@animal), :method => :delete %>
+      <% else %>
+        <%= button_to 'Add this animal', animal_id_path(@animal) %>
+      <% end %>
+    <% end %>
   </div>
 </div>
 
