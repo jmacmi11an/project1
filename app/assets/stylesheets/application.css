@@ -15,12 +15,9 @@
  */
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 
-/* font-family: 'Fredoka One', cursive; */
-
 body {
   background-color: #f1e7e9;
   text-decoration: none;
-  /* font-family: 'Fredoka One', cursive; */
 }
 
 h1 {
@@ -40,7 +37,7 @@ h1 {
 }
 
 .feature {
-  /* max-width: 21em; */
+
 }
 
 .backyard {
@@ -57,15 +54,14 @@ h1 {
 
 .title-left {
   background-color: #d29f68;
-  border-radius: 2px;
+  border-radius: 6px;
   padding: 3px;
 }
 
 .title-right {
-  background-color: #875c2e;
-  border-radius: 2px;
+  background-color: #d29f68;
+  border-radius: 6px;
   padding: 3px;
-  color: white;
 }
 
 .animal-index {

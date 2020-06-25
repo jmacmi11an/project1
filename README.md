@@ -18,7 +18,7 @@ Photos are hosted by Cloudinary and are uploadable to user profiles as well as t
 
 
 
-The following are my goals as I continue to develop this website. 
+The following are my goals as I continue to develop this website.
 
 - [ ] Allow a user to switch between an animals photos. On click the class will change and the clicked photo will be come the feature while the old feature will be come a thumb.
 - [ ] Allow a user to search for an animal by name from the animal index page.
@@ -27,6 +27,6 @@ The following are my goals as I continue to develop this website.
 - [ ] Web scrape from Pet Rescue and copy their animal and shelter databases.
 - [ ] Allow for users to directly email a shelter their intent to adopt with an application made for them from their already inputted information.
 - [ ] Remove the hardcoding of the carousel of animals on the home page and replace it with a random selection of animals from the database.
-- [ ]
+- [ ] Allow users to organize animals and shelters alphabetically.
 - [ ]
 - [ ]

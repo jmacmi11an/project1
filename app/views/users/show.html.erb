@@ -14,7 +14,7 @@
         <%= cl_image_tag @current_user.image, :class => 'feature img-fluid'%>
       <% end %>
       <% if @current_user.has_backyard != nil %>
-        <h4 class="my-1 title-left">Enclosed backyard?</h4>
+        <h4 class="my-3 title-left">Enclosed backyard?</h4>
           <% if @current_user.has_backyard == false && @current_user.backyard_images.size < 1%>
             <p>Unfortunately not, only cats or low energy dogs for me.</p>
           <% else %>
@@ -27,7 +27,7 @@
         <% end %>
       <% end %>
       <% if @current_user.has_pets != nil %>
-        <h4 class="my-1 title-left">Other pets?</h4>
+        <h4 class="my-3 title-left">Other pets?</h4>
           <% if @current_user.has_pets == true || @current_user.pet_number > 0 %>
             <p>Absolutely! Can't live without them!</p>
           <% else %>
@@ -35,17 +35,17 @@
           <% end %>
       <% end %>
       <% if @current_user.pet_number != nil && @current_user.pet_number != 0 %>
-        <h4 class="title-left">How many pets?</h4>
+        <h4 class="my-3 title-left">How many pets?</h4>
         <p><%= @current_user.pet_number%></p>
       <% end %>
     </div>
 
     <div class="col-md-5 offset-md-1">
       <% if @current_user.about != nil %>
-        <h3 class="title-right">About me:</h3> <p><%= @current_user.about %></p>
+        <h4 class="title-right my-3">About me:</h4> <p><%= @current_user.about %></p>
       <% end %>
       <% if @current_user.animals.size > 0 %>
-        <h4 class="title-right">Furever friends I love:</h4>
+        <h4 class="title-right my-3">Furever friends I love:</h4>
           <% @current_user.animals.each do |animal| %>
             <%= link_to cl_image_tag(animal.images.first, :class => 'thumb float-left my-1'), animal %>
           <% end %>
