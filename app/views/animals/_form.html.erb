@@ -33,7 +33,7 @@
         <%= a.number_field :adoption_cost, step: :any, :class => 'form-control' %>
 
         <%= a.label :upload_images %>
-        <%= a.file_field :images, :multiple => true, :class => 'form-control' %>
+        <%= a.file_field :images, :multiple => true, :class => 'form-control-file my-3' %>
 
         <%= a.label :shelter_id %>
         <%= a.select :shelter_id, Shelter.pluck(:name, :id), :include_blank => true, :class => 'form-control' %>

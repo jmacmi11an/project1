@@ -28,7 +28,7 @@
       <% end %>
       <% if @current_user.has_pets != nil %>
         <h4 class="my-3 title-left">Other pets?</h4>
-          <% if @current_user.has_pets == true || @current_user.pet_number > 0 %>
+          <% if @current_user.has_pets == true || @current_user.pet_number != nil %>
             <p>Absolutely! Can't live without them!</p>
           <% else %>
             <p>Not yet, I'm waiting to find one that's just right!</p>
@@ -36,7 +36,11 @@
       <% end %>
       <% if @current_user.pet_number != nil && @current_user.pet_number != 0 %>
         <h4 class="my-3 title-left">How many pets?</h4>
-        <p><%= @current_user.pet_number%></p>
+        <p><%= @current_user.pet_number%>
+        <% if @current_user.pet_type != nil && @current_user.pet_number > 0 %>
+          <%= @current_user.pet_type %>.
+          </p>
+        <% end %>
       <% end %>
     </div>
 

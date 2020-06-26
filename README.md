@@ -28,5 +28,5 @@ The following are my goals as I continue to develop this website.
 - [ ] Allow for users to directly email a shelter their intent to adopt with an application made for them from their already inputted information.
 - [ ] Remove the hardcoding of the carousel of animals on the home page and replace it with a random selection of animals from the database.
 - [ ] Allow users to organize animals and shelters alphabetically.
-- [ ]
-- [ ]
+- [ ] Center the photo carousel on the root page
+- [ ] Fix the user sign up sheet that allows you to select "no" pets but then enter a positive number of pets on the next line. 
