@@ -7,7 +7,7 @@
   <div class="col-md-6">
     <h2 class="animal-index">Cats</h2>
     <% @animals.each do |animal|  %>
-      <% if animal.species == 'cat' %>
+      <% if animal.species.downcase == 'cat' %>
         <%= link_to cl_image_tag(animal.images.first, :class => 'thumb my-3'), animal%>
       <% end %>
     <% end %>
@@ -16,7 +16,7 @@
   <div class="col-md-6">
     <h2 class="animal-index">Dogs</h2>
     <% @animals.each do |animal|  %>
-      <% if animal.species == 'dog' %>
+      <% if animal.species.downcase == 'dog' %>
         <%= link_to cl_image_tag(animal.images.first, :class => 'thumb my-3'), animal%>
       <% end %>
     <% end %>
