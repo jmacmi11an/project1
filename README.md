@@ -19,15 +19,15 @@ The CSS styling is done primarily with Bootstrap.
 Photos are hosted by Cloudinary and are uploadable to user profiles as well as to animal show pages.
 
 Technology used:
-Heroku
-Git
-Cloudinary
-CSS
-HTML
-Ruby
-Ruby gems including: bcrypt, cloudinary, pry-rails, and bootstrap
-Ruby on Rails
-PostgreSQL
+ - Heroku
+ - Git
+ - Cloudinary
+ - CSS
+ - HTML
+ - Ruby
+ - Ruby gems including: bcrypt, cloudinary, pry-rails, and bootstrap
+ - Ruby on Rails
+ - PostgreSQL
 
 
 
