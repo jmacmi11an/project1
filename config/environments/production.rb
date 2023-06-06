@@ -53,3 +53,4 @@ Rails.application.configure do
   # when problems arise.
   config.log_level = :debug
 
+end
