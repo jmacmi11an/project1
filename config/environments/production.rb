@@ -1,6 +1,9 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  #This is an override for Rails 5.2.0 update
+  config.require_master_key = true    # in config/environments/production.rb
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 
