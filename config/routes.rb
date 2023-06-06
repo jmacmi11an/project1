@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  root :to => 'pages#home'
+  get 'render/index'
+  # root :to => 'pages#home' used to have this line, replaced with line 5
+  root 'render#index'
   resources :users
   resources :shelters
   resources :animals
@@ -14,5 +16,4 @@ Rails.application.routes.draw do
   get '/favorites' => 'favorites#index'
   post '/favorites/:animal_id' => 'favorites#add_animal', :as => "animal_id"
   delete '/favorites/:animal_id' => 'favorites#remove_animal'
-
 end
